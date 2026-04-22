@@ -2,63 +2,46 @@
 // VARIABLES
 // ================================
 
-let messages = document.querySelectorAll('.ann-message')
-let controlBtn = document.getElementById('ann-control')
+let track = document.querySelector('.ann-track')
+let prevBtn = document.getElementById('ann-prev')
+let nextBtn = document.getElementById('ann-next')
 
+let totalMessages = 3
 let currentIndex = 0
-let isPlaying = true
-let timer = null
-
 // ================================
 // FUNCTIONS
 // ================================
 
-function showMessage(index) {
-    messages.forEach(function(msg) {
-        msg.classList.remove('active')
-    })
-    messages[index].classList.add('active')
-}
+function goToMessage(index) {
 
-function nextMessage() {
-    currentIndex = currentIndex + 1
-    if (currentIndex >= messages.length) {
-        currentIndex = 0
+    // Keep index within bounds
+    if (index < 0) {
+        index = totalMessages - 1
     }
-    showMessage(currentIndex)
-}
-
-function startPlaying() {
-    timer = setInterval(nextMessage, 3000)
-    isPlaying = true
-    controlBtn.innerHTML = '❚❚'
-    controlBtn.classList.remove('paused')
-}
-
-function stopPlaying() {
-    clearInterval(timer)
-    isPlaying = false
-    controlBtn.innerHTML = '&#9654;'
-    controlBtn.classList.add('paused')
-}
-
-function toggleControl() {
-    if (isPlaying) {
-        stopPlaying()
-    } else {
-        startPlaying()
+    if (index >= totalMessages) {
+        index = 0
     }
-}
 
+    currentIndex = index
+
+    // Slide the track
+    let slideAmount = currentIndex * -100
+    track.style.transform = 'translateX(' + slideAmount + '%)'
+}
 // ================================
 // EVENTS
 // ================================
 
-controlBtn.addEventListener('click', toggleControl)
+prevBtn.addEventListener('click', function() {
+    goToMessage(currentIndex - 1)
+})
+
+nextBtn.addEventListener('click', function() {
+    goToMessage(currentIndex + 1)
+})
 
 // ================================
 // START
 // ================================
 
-showMessage(0)
-startPlaying()
+goToMessage(0)
