@@ -9,8 +9,10 @@
 </head>
 
 <body>
+
     <!-- ANNOUNCEMENT BAR -->
     <div class="announcement-bar">
+
         <!-- Left Arrow -->
         <button class="ann-arrow" id="ann-prev">&#8249;</button>
 
@@ -19,24 +21,66 @@
 
             <!-- Messages Track — this is what slides -->
             <div class="ann-track">
-                <p class="ann-message">
-                    🔥 Free Delivery on Orders Above UGX 200,000
-                </p>
-                <p class="ann-message">
-                    🎓 15% Off for All Students on Subscription
-                </p>
+
+                <!-- Clone of Message 3 (sits at the very beginning) -->
                 <p class="ann-message">
                     🎉 3 Months Free for First Time Users — Cancel Anytime
                 </p>
+
+                <!-- Real Message 1 -->
+                <p class="ann-message">
+                    🔥 Free Delivery on Orders Above UGX 200,000
+                </p>
+
+                <!-- Real Message 2 -->
+                <p class="ann-message">
+                    🎓 15% Off for All Students on Subscription
+                </p>
+
+                <!-- Real Message 3 -->
+                <p class="ann-message">
+                    🎉 3 Months Free for First Time Users — Cancel Anytime
+                </p>
+
+                <!-- Clone of Message 1 (sits at the very end) -->
+                <p class="ann-message">
+                    🔥 Free Delivery on Orders Above UGX 200,000
+                </p>
+
             </div>
 
         </div>
 
         <!-- Right Arrow -->
         <button class="ann-arrow" id="ann-next">&#8250;</button>
+
     </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <!-- Left Zone — Logo -->
+        <div class="nav-logo">
+            Switch
+        </div>
+
+        <!-- Middle Zone — Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Right Zone — Cart -->
+        <div class="nav-cart">
+            <button class="cart-btn" id="cart-btn">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+
+    </nav>
 
     <script src="js/main.js"></script>
 </body>
-
 </html>
