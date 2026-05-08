@@ -2,7 +2,6 @@
 // ANNOUNCEMENT BAR
 // ================================
 
-// Variables
 let track = document.querySelector('.ann-track')
 let prevBtn = document.getElementById('ann-prev')
 let nextBtn = document.getElementById('ann-next')
@@ -12,8 +11,6 @@ let currentIndex = 1
 let isTransitioning = false
 let timer = null
 
-
-// Functions
 
 function goToPosition(index, animate) {
     if (animate) {
@@ -46,7 +43,7 @@ function handleInfiniteLoop() {
 
 function startTimer() {
     timer = setInterval(function() {
-        goToMessage(currentIndex + 1)
+        goToMessage(currentIndex - 1)
     }, 3000)
 }
 
@@ -56,22 +53,18 @@ function resetTimer() {
 }
 
 
-// Events
-
 prevBtn.addEventListener('click', function() {
-    goToMessage(currentIndex - 1)
+    goToMessage(currentIndex + 1)
     resetTimer()
 })
 
 nextBtn.addEventListener('click', function() {
-    goToMessage(currentIndex + 1)
+    goToMessage(currentIndex - 1)
     resetTimer()
 })
 
 track.addEventListener('transitionend', handleInfiniteLoop)
 
-
-// Start
 goToPosition(1, false)
 startTimer()
 
