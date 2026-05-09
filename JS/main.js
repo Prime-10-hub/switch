@@ -73,13 +73,24 @@ startTimer()
 // NAVBAR
 // ================================
 
+// Variables
 let cartBtn = document.getElementById('cart-btn')
 let cartCountEl = document.getElementById('cart-count')
+let searchBtn = document.getElementById('search-btn')
+let accountBtn = document.getElementById('account-btn')
+let wishlistBtn = document.getElementById('wishlist-btn')
+
 let cartTotal = 0
+
+
+// Functions
 
 function updateCart() {
     cartTotal = cartTotal + 1
     cartCountEl.innerText = cartTotal
 }
+
+
+// Events
 
 cartBtn.addEventListener('click', updateCart)
