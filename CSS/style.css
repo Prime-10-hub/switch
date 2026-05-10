@@ -71,14 +71,13 @@ body {
 .navbar {
     background-color: #ffffff;
     padding: 0 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid #eeeeee;
     position: sticky;
     top: 0;
     z-index: 100;
     height: 64px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* ================================
@@ -179,4 +178,83 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 1;
+}
+/* ================================
+   NAVBAR — active/hidden system
+   ================================ */
+
+.navbar-a {
+    display: none;
+}
+
+.navbar-b {
+    display: none;
+}
+
+.navbar-a.active-nav {
+    display: flex;
+}
+
+.navbar-b.active-nav {
+    display: flex;
+}
+
+/* ================================
+   NAVBAR TYPE B — left zone
+   ================================ */
+
+.nav-left-b {
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+.nav-links-b {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+}
+
+.nav-links-b a {
+    text-decoration: none;
+    color: #444444;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-links-b a:hover {
+    color: #1a1a1a;
+}
+
+/* ================================
+   NAVBAR TYPE B — center zone
+   ================================ */
+
+.nav-center-b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-logo-b {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    letter-spacing: -0.5px;
+}
+
+/* ================================
+   NAVBAR TYPE B — right zone
+   ================================ */
+
+.nav-right-b {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+    justify-content: flex-end;
 }

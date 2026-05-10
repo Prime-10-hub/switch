@@ -94,3 +94,18 @@ function updateCart() {
 // Events
 
 cartBtn.addEventListener('click', updateCart)
+// ================================
+// NAVBAR TYPE B
+// ================================
+
+let cartBtnB = document.getElementById('cart-btn-b')
+let cartCountB = document.getElementById('cart-count-b')
+
+let cartTotalB = 0
+
+function updateCartB() {
+    cartTotalB = cartTotalB + 1
+    cartCountB.innerText = cartTotalB
+}
+
+cartBtnB.addEventListener('click', updateCartB)
