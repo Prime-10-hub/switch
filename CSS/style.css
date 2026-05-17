@@ -271,26 +271,34 @@ body {
     --light:       #ffffff;
 }
 /* ================================
-   HERO — outer box
+   HERO — outer container
    ================================ */
 
 .hero {
-    position: relative;
     width: 100%;
-    height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1600');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: calc(100vh - 100px);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 }
+
 /* ================================
-   HERO — overlay
+   HERO — left panel
    ================================ */
 
-.hero-overlay {
+.hero-left {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    background-image: url('../Images/hero.main.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 32px 48px;
+}
+
+.hero-left-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -298,53 +306,154 @@ body {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(26, 26, 46, 0.85) 0%,
-        rgba(233, 69, 96, 0.4) 100%
+        rgba(88, 28, 135, 0.5) 0%,
+        rgba(0, 0, 0, 0.2) 100%
     );
 }
+
 /* ================================
-   HERO — content
+   HERO — content text
    ================================ */
 
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: var(--light);
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.hero-tag {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    opacity: 0.7;
+    gap: 12px;
 }
 
 .hero-title {
-    font-size: clamp(64px, 12vw, 140px);
+    font-size: clamp(64px, 8vw, 120px);
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 1;
     text-transform: uppercase;
-}
-
-.hero-sub {
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: 300;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-top: 8px;
-}
-.hero-title {
     transition: letter-spacing 0.4s ease;
 }
 
 .hero-title:hover {
     letter-spacing: 8px;
+}
+
+.hero-sub {
+    font-size: clamp(12px, 1.5vw, 16px);
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* ================================
+   HERO — right panel container
+   ================================ */
+
+.hero-right {
+    width: 40%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+/* ================================
+   HERO — each right panel
+   ================================ */
+
+.hero-panel {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* RIGHT PANEL IMAGES */
+
+#panel-ps5 {
+    background-image: url('../Images/hero.console.webp');
+}
+
+#panel-xbox {
+    background-image: url('../Images/hero.console (2).webp');
+}
+
+#panel-games {
+    background-image: url('../Images/hero.games.webp');
+}
+
+#panel-accessories {
+    background-image: url('../Images/hero.accessories.webp');
+}
+
+/* ================================
+   HERO — panel overlays
+   ================================ */
+
+.panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background 0.3s ease;
+}
+
+#panel-ps5 .panel-overlay {
+    background: rgba(0, 30, 100, 0.5);
+}
+
+#panel-xbox .panel-overlay {
+    background: rgba(0, 100, 80, 0.5);
+}
+
+#panel-games .panel-overlay {
+    background: rgba(30, 60, 120, 0.5);
+}
+
+#panel-accessories .panel-overlay {
+    background: rgba(120, 50, 0, 0.4);
+}
+
+/* ================================
+   HERO — panel labels
+   ================================ */
+
+.panel-label {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.panel-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.panel-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+    transition: letter-spacing 0.3s ease;
+}
+
+/* ================================
+   HERO — panel hover effects
+   ================================ */
+
+.hero-panel:hover .panel-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-panel:hover .panel-name {
+    letter-spacing: 2px;
 }
